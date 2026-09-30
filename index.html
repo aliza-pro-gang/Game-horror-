@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Haunted Dorm - Frontend Prototype</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game">
+    <header class="topbar">
+      <div class="brand">
+        <span class="skull">☠</span>
+        <div>
+          <strong>HAUNTED</strong>
+          <small>DORM</small>
+        </div>
+      </div>
+      <div class="resources">
+        <div class="resource">🪙 <b id="coins">250</b></div>
+        <div class="resource">⚡ <b id="energy">100</b></div>
+      </div>
+    </header>
+
+    <section class="hud">
+      <div>
+        <span class="label">BASE POWER</span>
+        <div class="bar"><i id="baseBar"></i></div>
+      </div>
+      <button id="pauseBtn" class="small-btn">Ⅱ</button>
+    </section>
+
+    <section id="map" class="map" aria-label="game map">
+      <div class="grid"></div>
+
+      <div class="wall top"></div>
+      <div class="wall bottom"></div>
+      <div class="wall left"></div>
+      <div class="wall right"></div>
+
+      <div class="room room-a"><span>ROOM 01</span><div class="bed"></div></div>
+      <div class="room room-b"><span>ROOM 02</span><div class="bed"></div></div>
+      <div class="room room-c"><span>ROOM 03</span><div class="bed"></div></div>
+      <div class="room room-d"><span>ROOM 04</span><div class="bed"></div></div>
+
+      <div class="door d1"></div>
+      <div class="door d2"></div>
+      <div class="door d3"></div>
+      <div class="door d4"></div>
+
+      <div id="player" class="player">
+        <div class="player-body">🧑‍🚀</div>
+        <div class="unit-hp"><i></i></div>
+      </div>
+
+      <div id="monster" class="monster">
+        <div class="monster-body">👹</div>
+        <div class="monster-hp"><i id="monsterHp"></i></div>
+      </div>
+
+      <div id="turret1" class="turret t1">⚙️</div>
+      <div id="turret2" class="turret t2">⚙️</div>
+      <div id="turret3" class="turret t3">⚙️</div>
+
+      <div id="laser1" class="laser l1"></div>
+      <div id="laser2" class="laser l2"></div>
+      <div id="laser3" class="laser l3"></div>
+
+      <div id="damageText" class="damage-text">+0</div>
+    </section>
+
+    <section class="bottom-panel">
+      <div class="mission">
+        <div>
+          <b>DEFEND THE DORM</b>
+          <small>Survive the night and upgrade your defense.</small>
+        </div>
+        <div class="wave">WAVE <strong id="wave">1</strong></div>
+      </div>
+
+      <div class="actions">
+        <button class="action" data-cost="40" data-action="turret">⚡<span>Turret</span><em>40</em></button>
+        <button class="action" data-cost="60" data-action="shield">🛡️<span>Shield</span><em>60</em></button>
+        <button class="action" data-cost="80" data-action="heal">❤️<span>Repair</span><em>80</em></button>
+        <button class="action" data-cost="100" data-action="upgrade">⬆️<span>Upgrade</span><em>100</em></button>
+      </div>
+    </section>
+
+    <div id="paused" class="overlay hidden">
+      <div class="modal">
+        <h2>GAME PAUSED</h2>
+        <button id="resumeBtn">RESUME</button>
+      </div>
+    </div>
+
+    <div class="toast" id="toast">Defense activated!</div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
